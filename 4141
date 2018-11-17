@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+#define rep(i,n) for(int i=0;i<n;i++)
+#define per(i,n) for(int i=n-1;i>=0;i--)
+#define pb push_back
+#define mp make_pair
+using namespace std;
+int mark[10000]={0};
+vector<int> sieve()
+{
+    vector<int>vect{2};
+    for(int i=4;i<=10000;i+=2) mark[i]=1;
+    for(int i=3;i*i<=10000;i+=2)
+    {
+        if(!mark[i])
+        {
+            for(int j=i*i;j<=10000;j+=i+i)
+            {
+                mark[j]=1;
+            }
+        }
+    }
+    for(int i=3;i<=10000;i+=2)
+        if(!mark[i])
+            vect.pb(i);
+    return vect;
+}
+int euphi(int n,vector<int>vect)
+{
+    double ans=n;
+    if(n==1) return 1;
+    if( n<10001 && mark[n]==0) return n-1;
+    for(int i=0;vect[i]*vect[i]<=n;i++)
+    {
+        if(n%vect[i]==0) {ans *= (1.0-(1.0/(float)vect[i]));
+        while(n%vect[i]==0) n/=vect[i];}
+
+    }
+    if(n>1) ans*= (1.0 - (1.0 / (float)n)); ;
+    return (int)ans;
+}
+int main()
+{
+    vector<int>vect=sieve();int t;cin>>t;
+    while(t--)
+    {int n;cin>>n;
+    cout<<euphi(n,vect)<<endl;
+
+    }
+}
