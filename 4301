@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+#define rep(n) for(int i=0;i<n;i++)
+using namespace std;
+int main()
+{
+    int i,n,k,s;cin>>n>>k>>s;int arr[n];
+    rep(n) cin>>arr[i];
+    sort(arr,arr+n);
+    k=k*s;
+    int sum=0,p=0;
+    for(i=n-1;i>=0;i--)
+    {
+        sum+=arr[i];p++;
+        if(sum>=k) break;
+    }
+    cout<<p<<endl;
+    return 0;
+}
