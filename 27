@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+#define rep(i,n) for(i=mapi.begin();i!=n;i++)
+#define pb push_back
+#define mp make_pair
+using namespace std;
+
+int main()
+{
+    int t;cin>>t;
+    while(t--)
+    {
+        int n;cin>>n;
+        string str;
+        cin.ignore();
+        map<string,int>mapi;
+        while(n--)
+        {
+            getline(cin,str);
+            mapi[str]++;
+        }
+        map<string,int>::iterator itr;
+        rep(itr,mapi.end()) cout<<itr->first<<' '<<itr->second<<endl;
+    }
+}
