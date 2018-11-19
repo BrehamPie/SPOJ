@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a,b;cin>>a>>b;long long ans;
+    if(a%2) a-=2;else a--;
+    if(b%2==0) b--;
+    ans=powl(ceil(b/2.0),2)-powl(ceil(max(0.0,a/2.0)),2);
+    cout<<ans<<endl;
+}
+
