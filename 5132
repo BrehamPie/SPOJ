@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define rep(i,n) for(int i=0;i<n;i++)
+#define pb push_back
+#define mp make_pair
+using namespace std;
+
+int main()
+{
+    string ss;
+    while(cin>>ss && ss!=".")
+    {
+        int n;cin>>n;string ans;
+        rep(i,n+1) ans+=ss;
+        int p=ss.size();
+        for(int i=0;i<p;i++)
+        {
+            string as(ans.begin()+i,ans.begin()+i+(p*n));
+            cout<<as<<endl;
+        }
+
+    }
+}
+
