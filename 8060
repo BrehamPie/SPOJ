@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+#define rep(i,n) for(int i=0;i<n;i++)
+using namespace std;
+
+int main()
+{
+   int t;cin>>t;
+   while(t--)
+   {
+       int n,a,d;cin>>n>>a>>d;
+       int sum=a;
+       rep(i,n-1) {a+=d;sum+=a;}
+       cout<<sum<<endl;
+   }
+}
+
